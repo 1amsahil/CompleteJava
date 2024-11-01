@@ -1,3 +1,4 @@
+// JDBC is an API(Application programming interface) used in Java programming to interact with databases. The classes and interfaces of JDBC allow the application to send requests made by users to the specified database
 package JDBC;
 
 import java.sql.*;
