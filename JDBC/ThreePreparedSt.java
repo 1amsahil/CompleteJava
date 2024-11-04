@@ -14,17 +14,23 @@ public class ThreePreparedSt {
         Connection con = DriverManager.getConnection(url,user,pass);
         System.out.println(" Connection Established ");
 
-        System.out.println("Id : ");
+        System.out.print("Id : ");
         int id = sc.nextInt();
 
-        System.out.println("Name : ");
-        String name = sc.nextLine();
+        System.out.print("Name : ");
+        String name = sc.next();
 
-        System.out.println("Marks : ");
+        System.out.print("Marks : ");
         double marks = sc.nextDouble();
 
         PreparedStatement ps = con.prepareStatement("Insert into student Values (?,?,?) ;");
+        ps.setInt(1,id);
+        ps.setString(2,name);
+        ps.setDouble(3,marks);
 
+        ps.execute();
+
+        con.close();
 
     }
 }
